@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My portfolio</title>
+    <style>
+        .main{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="loading">
+loading.....
+</div>
+
+    <div class="main" id="mainContainer" hidden>
+<img
+        id="profileImage"
+    height="100"
+    width="100"
+>
+<h2 id="fullname"></h2>
+<p id="bio">  </p>
+ <h5 id="followersInfromation"> </h5> 
+<p>
+    Check me on <a id="githublink">Github</a>
+</p>
+<h3 id="reponame"></h3>
+
+
+<!-- <a class="twitter-timeline" data-width="400" data-height="400" data-theme="dark" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  -->
+<!-- <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbirat.rai1010&tabs=timeline&width=400&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="400" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+</div>
+<script>
+    fetch("https://api.github.com/users/biratrai10")
+        .then(response => response.json())
+        .then(function(data){
+            console.log(data)
+            let followerscount = data['followers']
+            // let followersinfo = 'I have been followed by '$(followerscount)' awesome people in Github'
+            document.getElementById('profileImage').src = data['avatar_url']
+            document.getElementById('fullname').textContent = data['name']
+            document.getElementById('bio').textContent = data['bio']
+            document.getElementById('followersInfromation').textContent = 'I have been followed by '+data['followers']+ ' awesome people in Github'
+            // document.getElementById('followersInfromation') = followersinfo
+
+            document.getElementById('githublink').href = data['html_url']
+            // document.getElementById('reponame').textContent = data['name']
+            document.getElementById('mainContainer').hidden = false
+            document.getElementById('loading').hidden = true
+
+        })
+    </script>
+</body>
+
+</html>
