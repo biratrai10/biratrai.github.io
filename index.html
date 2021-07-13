@@ -1,58 +1,72 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>My portfolio</title>
-    <style>
-        .main{
-            text-align: center;
-        }
-        
-    </style>
-</head>
-<body>
-<div id="loading">
-loading.....
-</div>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio</title>
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- definded css -->
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./responsive.css" />
+	</head>
+	<body>
+		<header>
+			<!-- navigation -->
+			<div class="container">
+				<nav>
+					<!-- logo -->
+					<div class="logo-container">
+						<a id="logo">R E S U M E</a>
+					</div>
+					<ul class="nav-list">
+						<li><a href="/index.html">Home</a></li>
+						<li><a href="./projects/projects.html">Projects</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Career</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div id="loading">loading...</div>
+		<main id="main-container">
+			<h1>Welcome to My Portfolio</h1>
+			<section id="banner">
+				<div class="container">
+					<div id="portfolio-wrapper">
+						<div id="portfolio-info-content">
+							<div id="portfolio-info">
+								<h2 id="full-name">Birat Rai</h2></br>
+								<p id="bio"></p></br>
+								<h5 id="followers-info"></h5></br>
+								<p>
+									Check me on
+									<a id="github-link" href="">GithubLink</a>
+								</p>
+							</br>
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbirat.rai1010&tabs=timeline&width=400&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="400" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+							</div>
+						</div>
 
-    <div class="main" id="mainContainer" hidden>
-<img
-        id="profileImage"
-    height="100"
-    width="100"
->
-<h2 id="fullname"></h2>
-<p id="bio">  </p>
- <h5 id="followersInfromation"> </h5> 
-<p>
-    Check me on <a id="githublink">Github</a>
-</p>
-<h3 id="reponame"></h3>
-
-
-<!-- <a class="twitter-timeline" data-width="400" data-height="400" data-theme="dark" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  -->
-<!-- <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbirat.rai1010&tabs=timeline&width=400&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="400" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
-</div>
-<script>
-    fetch("https://api.github.com/users/biratrai10")
-        .then(response => response.json())
-        .then(function(data){
-            console.log(data)
-            let followerscount = data['followers']
-            // let followersinfo = 'I have been followed by '$(followerscount)' awesome people in Github'
-            document.getElementById('profileImage').src = data['avatar_url']
-            document.getElementById('fullname').textContent = data['name']
-            document.getElementById('bio').textContent = data['bio']
-            document.getElementById('followersInfromation').textContent = 'I have been followed by '+data['followers']+ ' awesome people in Github'
-            // document.getElementById('followersInfromation') = followersinfo
-
-            document.getElementById('githublink').href = data['html_url']
-            // document.getElementById('reponame').textContent = data['name']
-            document.getElementById('mainContainer').hidden = false
-            document.getElementById('loading').hidden = true
-
-        })
-    </script>
-</body>
-
+						<div id="portfolio-image-container">
+							<img
+							  
+								alt="portfolio"
+								id="profile-image"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer></footer>
+		<script src="./script.js"></script>
+	</body>
 </html>

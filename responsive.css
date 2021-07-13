@@ -1,0 +1,45 @@
+/* ! costume bootstrap contents! */
+/* bootstrap css */
+.container {
+	margin: 0 auto;
+	padding: 0 30px;
+}
+/* bootstrap media queries */
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1199px) {
+	.container {
+		max-width: 1140px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 991px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+	.container {
+		max-width: 720px;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 575px) {
+	.container {
+		max-width: 540px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.container {
+		max-width: 1320px;
+	}
+}
+/* !bootstrap contents! */
+
+/* *responsive css* */
+
+/* *responsive css* */
